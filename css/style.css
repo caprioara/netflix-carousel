@@ -1,0 +1,121 @@
+body {
+    background-color: #202020;
+}
+
+h3 {
+    margin: 0;
+}
+
+.container-title-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.container-title-controls h3 {
+    color: #fff;
+    font-size: 2em;
+}
+
+.container-title-controls .indicator button {
+    background-color: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.container-title-controls .indicator button:hover,
+.container-title-controls .indicator button.active {
+    background-color: #ED4956;
+}
+
+.container-recommended {
+    margin-bottom: 70;
+    width: 90%;
+    margin: auto;
+}
+
+ .container-recommended .container-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+ }
+
+.container-recommended .container-principal :is(.arrow-left, .arrow-right) {
+    position: absolute;
+    border: none;
+    background: rgba(0,0,0,0.3);
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 10px;
+    width: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}    
+
+.container-recommended .container-principal :is(.arrow-left, .arrow-right):hover {
+    background-color: rgba(0,0,0,0.9);
+}
+
+.container-recommended .container-principal :is(.arrow-left, .arrow-right) i {
+    font-size: 2em;
+}
+
+.container-recommended .container-principal .arrow-left {
+    left: 0;
+}
+
+.container-recommended .container-principal .arrow-right {
+    right: 0;
+}
+
+.container-recommended .container-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    /* overflow-x:scroll; */
+    scroll-behavior: smooth;
+}
+
+.container-recommended .container-carousel .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container-recommended .container-carousel .carousel .anime {
+    min-width: 20%;
+    transition: 300ms ease all;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.container-recommended .container-carousel .carousel .anime:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.container-recommended .container-carousel .carousel .anime img {
+    width: 100%;
+    vertical-align: top;
+}
+
+@media screen and (max-width: 800px) {
+    .container-recommended .container-carousel {
+        overflow: visible;
+    }
+
+    .container-recommended .container-carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+
+    .container-recommended .indicator,
+    .container-recommended .arrow-left,
+    .container-recommended .arrow-right {
+        display: none;
+    }
+}
